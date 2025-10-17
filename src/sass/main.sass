@@ -1,4 +1,48 @@
-@use 'normalize' as *;
-@use 'fonts' as *;
-@use 'variables' as *;
-@use 'mixins' as *;
+@use 'normalize' as *
+@use 'fonts' as *
+@use 'variables' as *
+@use 'mixins' as *
+
+body
+  font-family: $font-family-base
+// header start
+.header
+
+  .navbar
+    background: #212121
+    padding: 0
+
+    
+
+    &__link
+      font-size: $text-base
+      letter-spacing: 0px
+      line-height: 18px
+      border-right: 2px dotted #000
+    .nav-item
+      &:last-child
+        a
+          border-right: none
+        
+
+    &__link-color
+      color: $text-primary
+      font-weight: 300
+
+    .navbar-toggler
+      padding: 0
+      &:focus
+        box-shadow: none
+        
+        
+      .navbar-toggler-icon
+        background-image: url(../icon/burger.png)
+// header end
+
+// main start
+
+// hero start
+
+// hero end
+
+// main end

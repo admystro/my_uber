@@ -5,44 +5,130 @@
 
 body
   font-family: $font-family-base
+  .wrapper
+    max-width: 1165px
+    margin: 0 auto
+ 
 // header start
 .header
+  background: #212121
+  
 
   .navbar
-    background: #212121
     padding: 0
-
-    
 
     &__link
       font-size: $text-base
       letter-spacing: 0px
       line-height: 18px
-      border-right: 2px dotted #000
-    .nav-item
-      &:last-child
-        a
-          border-right: none
-        
-
+    
     &__link-color
       color: $text-primary
       font-weight: 300
+
+    &__spacer
+      border-right: 2px dotted #000
 
     .navbar-toggler
       padding: 0
       &:focus
         box-shadow: none
-        
-        
+
       .navbar-toggler-icon
         background-image: url(../icon/burger.png)
+    .navbar-collapse
+      @media (max-width: 991px)
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+        background: #212121
+        z-index: 1000
 // header end
 
 // main start
-
 // hero start
+main
+  .hero
+    padding-top: 120px
+    padding-bottom: 90px
+    background: url(../img/uber_bg.png) no-repeat center/cover
+    @media (max-width: 992px)
+      
+    @media (max-width: 768px)
+      padding-top: 101px
+      padding-bottom: 34px
 
+    .contact
+      padding: 20px 0
+      background: $bg-secondary-60
+      @media (max-width: 991px)
+        padding: 10px 0
+      
+
+      &__number
+        color: $text-primary
+        font-size: $text-xs
+        font-weight: 300
+        
+       
+
+        a
+          color: inherit
+          font-size: $text-lg
+          text-decoration: none
+          font-weight: normal
+          display: block
+          @media (max-width: 991px)
+            line-height: $text-lg
+            margin-bottom: 8px
+          @media (max-width: 768px)
+            font-size: $text-base
+            line-height: $text-base
+      &__button
+        +button( $text-sm)
+        height: 46px
+        width: 172px
+        @media (max-width: 768px)
+          height: 30px
+          width: 155px
+          font-size: $text-xs
+    &__title,
+    &__subtitle
+      color: $text-primary
+
+    &__title
+      @media (max-width: 768px)
+        
+      h1
+        font-size: $h1-desktop
+        @media (max-width: 992px)
+          font-size: $h1-tablet
+        @media (max-width: 768px)
+          font-size: $h1-mobile
+      h2
+        
+        @media (max-width: 992px)
+          font-size: $h2-tablet
+        @media (max-width: 768px)
+          font-size: $h2-mobile
+
+    &__subtitle
+      
+
+    &__btn
+      +button($text-md)
+      width: 260px
+      height: 63px
+      margin: auto
+      margin-top: 112px
+      @media (max-width: 768px)
+        width: 200px
+        height: 50px
+        margin-top: 80px
+
+        
+          
 // hero end
 
 // main end

@@ -8,11 +8,10 @@ body
   .wrapper
     max-width: 1165px
     margin: 0 auto
- 
+
 // header start
 .header
   background: #212121
-  
 
   .navbar
     padding: 0
@@ -21,7 +20,7 @@ body
       font-size: $text-base
       letter-spacing: 0px
       line-height: 18px
-    
+
     &__link-color
       color: $text-primary
       font-weight: 300
@@ -54,7 +53,7 @@ main
     padding-bottom: 90px
     background: url(../img/uber_bg.png) no-repeat center/cover
     @media (max-width: 992px)
-      
+
     @media (max-width: 768px)
       padding-top: 101px
       padding-bottom: 34px
@@ -64,14 +63,11 @@ main
       background: $bg-secondary-60
       @media (max-width: 991px)
         padding: 10px 0
-      
 
       &__number
         color: $text-primary
         font-size: $text-xs
         font-weight: 300
-        
-       
 
         a
           color: inherit
@@ -99,7 +95,7 @@ main
 
     &__title
       @media (max-width: 768px)
-        
+
       h1
         font-size: $h1-desktop
         @media (max-width: 992px)
@@ -107,14 +103,11 @@ main
         @media (max-width: 768px)
           font-size: $h1-mobile
       h2
-        
+
         @media (max-width: 992px)
           font-size: $h2-tablet
         @media (max-width: 768px)
           font-size: $h2-mobile
-
-    &__subtitle
-      
 
     &__btn
       +button($text-md)
@@ -126,9 +119,55 @@ main
         width: 200px
         height: 50px
         margin-top: 80px
-
-        
-          
 // hero end
+.black-badge
+  margin: auto
+  margin-bottom: 20px
+  margin-top: 20px
+  background: #000
+  width: fit-content
+  font-size: $text-sm
+  line-height: $text-sm
+
+//reason start 
+.reason
+  padding-bottom: 40px
+  .card-reason
+    border: none
+    font-size: 14px
+    h2
+      @media (max-width: 992px)
+        font-size: $h2-tablet
+      @media (max-width: 768px)
+        font-size: $h2-mobile
+
+    h5
+      font-size: 14px
+      color: $text-success
+
+    &__ico
+
+      width: 116px
+      height: 116px
+      border-radius: 50%
+      align-self: center
+      @media (max-width: 768px)
+        width: 98px
+        height: 98px
+
+      @each $card, $ico in $card-ico
+        &.#{$card}
+          background: url('../icon/#{$ico}') no-repeat center/cover
+
+//reason end 
+// mobile app start
+.mobile-app
+  padding: 48px 0 80px
+  background: url(./img/mobile_bg.png) no-repeat center/cover
+  height: : 800px
+  width: 100%
+
+
+// mobile app end
 
 // main end

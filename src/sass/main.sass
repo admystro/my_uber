@@ -163,9 +163,17 @@ main
 // mobile app start
 .mobile-app
   padding: 48px 0 80px
-  background: url(./img/mobile_bg.png) no-repeat center/cover
-  height: : 800px
+  background: url(../img/mobile_bg.png) no-repeat center/cover
   width: 100%
+
+  &__card
+    width: 100%
+    margin-bottom: 20px
+    min-height: 300px
+
+    @each $card, $bg in $app-bg
+      &.#{$card}
+        background: url('../img/#{$bg}') no-repeat center/cover
 
 
 // mobile app end

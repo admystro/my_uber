@@ -13,38 +13,34 @@ body
 .navigation
   background: #212121
 
-  .navbar
+  &__link
+    font-size: $text-base
+    letter-spacing: 0px
+    line-height: 18px
 
+  &__link-color
+    color: $text-primary
+    font-weight: 300
+
+  &__spacer
+    border-right: 2px dotted #000
     padding: 0
 
-    &__link
-      font-size: $text-base
-      letter-spacing: 0px
-      line-height: 18px
+  .navbar-toggler
+    padding: 0
+    &:focus
+      box-shadow: none
 
-    &__link-color
-      color: $text-primary
-      font-weight: 300
-
-    &__spacer
-      border-right: 2px dotted #000
-      padding: 0
-
-    .navbar-toggler
-      padding: 0
-      &:focus
-        box-shadow: none
-
-      .navbar-toggler-icon
-        background-image: url(../icon/burger.png)
-    .navbar-collapse
-      @media (max-width: 991px)
-        position: absolute
-        top: 100%
-        left: 0
-        right: 0
-        background: #212121
-        z-index: 1000
+    .navbar-toggler-icon
+      background-image: url(../icon/burger.png)
+  .navbar-collapse
+    @media (max-width: 991px)
+      position: absolute
+      top: 100%
+      left: 0
+      right: 0
+      background: #212121
+      z-index: 1000
 
 .hero
 
@@ -52,10 +48,16 @@ body
     width: 100%
     min-height: 800px
     background: url(../img/uber_bg.png) no-repeat center/cover
+    margin-bottom: 0
+
+    @media (max-width: 768px)
+      min-height: 400px
+      background: url(../img/bg.png) no-repeat center/cover
 
     .contact
       padding: 20px 0
       background: $bg-secondary-60
+
       @media (max-width: 991px)
         padding: 10px 0
 
@@ -84,12 +86,8 @@ body
           height: 30px
           width: 155px
           font-size: $text-xs
-    &__title,
-    &__subtitle
+    .content
       color: $text-primary
-
-    &__title
-      @media (max-width: 768px)
 
       h1
         font-size: $h1-desktop
@@ -104,65 +102,63 @@ body
         @media (max-width: 768px)
           font-size: $h2-mobile
 
-    &__btn
-      +button($text-md)
-      width: 260px
-      height: 63px
-      margin: auto
-      margin-top: 112px
-      @media (max-width: 768px)
-        width: 200px
-        height: 50px
-        margin-top: 80px
-
-   
+      &__btn
+        +button($text-md)
+        width: 260px
+        height: 63px
+        margin: auto
+        margin-top: 112px
+        @media (max-width: 768px)
+          width: 180px
+          height: 50px
+          margin-top: 40px
 
   // header end
 
 // main start
 // hero start
 
-
-    
 // hero end
-.black-badge
-  margin: auto
-  margin-bottom: 20px
-  margin-top: 20px
-  background: #000
-  width: fit-content
-  font-size: $text-sm
-  line-height: $text-sm
 
 //reason start 
 .reason
   padding-bottom: 40px
-  .card-reason
+
+  &__badge
+    margin: auto
+    margin-bottom: 20px
+    margin-top: 20px
+    background: #000
+    width: fit-content
+    font-size: $text-sm
+    line-height: $text-sm
+
+  &__title
+    @media (max-width: 992px)
+      font-size: $h2-tablet
+    @media (max-width: 768px)
+      font-size: $h2-mobile
+
+  &__card
     border: none
     font-size: 14px
-    h2
-      @media (max-width: 992px)
-        font-size: $h2-tablet
-      @media (max-width: 768px)
-        font-size: $h2-mobile
 
     h5
       font-size: 14px
       color: $text-success
 
-    &__ico
+  &__card-ico
+    width: 116px
+    height: 116px
+    border-radius: 50%
+    align-self: center
+    @media (max-width: 768px)
+      width: 98px
+      height: 98px
 
-      width: 116px
-      height: 116px
-      border-radius: 50%
-      align-self: center
-      @media (max-width: 768px)
-        width: 98px
-        height: 98px
-
-      @each $card, $ico in $card-ico
-        &.#{$card}
-          background: url('../icon/#{$ico}') no-repeat center/cover
+    @each $card, $ico in $card-ico
+      &.#{$card}
+        background: url('../icon/#{$ico}') no-repeat center/cover
 
 //reason end 
 // mobile app start
@@ -171,14 +167,48 @@ body
   background: url(../img/mobile_bg.png) no-repeat center/cover
   width: 100%
 
+  &__badge
+    margin: auto
+    margin-bottom: 20px
+    margin-top: 20px
+    background: #000
+    width: fit-content
+    font-size: $text-sm
+    line-height: $text-sm
+
+  &__title
+    @media (max-width: 992px)
+      font-size: $h2-tablet
+    @media (max-width: 768px)
+      font-size: $h2-mobile
+
   &__card
     width: 100%
     margin-bottom: 20px
     min-height: 300px
+    padding: 80px 20px 34px 20px
+    color: $text-primary
+    text-align: center
+    text-transform: uppercase
+    font-size: 24px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
 
     @each $card, $bg in $app-bg
       &.#{$card}
         background: url('../img/#{$bg}') no-repeat center/cover
+    
+    span
+      background: #000
+      width: 29px
+      height: 29px
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+
 
 // mobile app end
 
